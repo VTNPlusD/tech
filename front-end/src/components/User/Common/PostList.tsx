@@ -1,5 +1,5 @@
-import { DataPost } from "data";
-import { Post } from "types/Model";
+import { fakeData2 } from "components/mock_data";
+import { Post } from "types/Post";
 
 type PostItemProps = {
   post: Post;
@@ -62,7 +62,7 @@ const PostItem = (props: PostItemProps) => {
 };
 
 PostList.defaultProps = {
-  postList: DataPost,
+  postList: fakeData2,
 };
 
 export default PostList;

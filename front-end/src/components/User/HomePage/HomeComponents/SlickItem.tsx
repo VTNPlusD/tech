@@ -1,4 +1,4 @@
-import { Post } from "types/Model";
+import { Post } from "types/Post";
 
 type Props = {
   item: Post;

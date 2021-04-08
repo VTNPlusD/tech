@@ -1,6 +1,6 @@
-import { DataPost, DataPost2 } from "data";
+import { fakeData, fakeData2 } from "components/mock_data";
 import { useEffect, useState } from "react";
-import { Post } from "types/Model";
+import { Post } from "types/Post";
 
 type Props = {
   content_id: number;
@@ -60,24 +60,24 @@ const TabContentItem = ({ item }: PostItemProps) => {
 };
 
 const TabContentNews = ({ content_id }: Props) => {
-  const [data, setData] = useState<any>(DataPost);
+  const [data, setData] = useState<any>(fakeData);
 
   useEffect(() => {
     switch (content_id) {
       case 1:
-        setData(DataPost);
+        setData(fakeData);
         break;
       case 2:
-        setData(DataPost2);
+        setData(fakeData2);
         break;
       case 3:
-        setData(DataPost);
+        setData(fakeData);
         break;
       case 4:
-        setData(DataPost2);
+        setData(fakeData2);
         break;
       case 5:
-        setData(DataPost);
+        setData(fakeData);
         break;
     }
   }, [content_id]);

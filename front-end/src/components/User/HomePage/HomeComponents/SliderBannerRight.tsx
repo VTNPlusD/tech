@@ -1,8 +1,8 @@
 import { connect } from "react-redux";
-import { DataPost } from "data";
+import * as data from "components/mock_data";
 import { useHistory } from "react-router-dom";
 import { Path } from "constants/path";
-import { Category, Post } from "types/Model";
+import { Category, Post } from "types/Post";
 
 const SliderBannerRight = () => {
   const history = useHistory();
@@ -41,10 +41,7 @@ const SliderBannerRight = () => {
                 </a>
               ))}
             </div>
-            <h3
-              onClick={() => onSelectPost(item.id)}
-              className="post-title cur-po"
-            >
+            <h3 onClick={() => onSelectPost(item.id)} className="post-title cur-po">
               <a>{item.title}</a>
             </h3>
             <ul className="post-meta-info  ">
@@ -74,7 +71,7 @@ const SliderBannerRight = () => {
         <div className="elementor-widget-container">
           <div className="grid-item">
             <div className="ts-overlay-style featured-post post-59 post type-post status-publish format-standard has-post-thumbnail hentry category-fashion tag-travel">
-              {_renderSubView(DataPost[0])}
+              {_renderSubView(data.fakeData2[0])}
             </div>
           </div>
         </div>
@@ -93,7 +90,7 @@ const SliderBannerRight = () => {
         <div className="elementor-widget-container">
           <div className="grid-item">
             <div className="ts-overlay-style featured-post post-59 post type-post status-publish format-standard has-post-thumbnail hentry category-fashion tag-travel">
-              {_renderSubView(DataPost[0])}
+              {_renderSubView(data.fakeData2[0])}
             </div>
           </div>
         </div>
