@@ -4,7 +4,6 @@ export class RegisterRequest {
          private _email: string;
          private _firstName: string;
          private _lastName: string;
-         private _avatar_url: string;
          private _password: string;
          private _permissions: string;
          private _lastLogin: Date;
@@ -15,7 +14,6 @@ export class RegisterRequest {
            _email: string,
            _firstName: string,
            _lastName: string,
-           _avatar_url: string,
            _password: string,
            _permissions: string,
            _lastLogin: Date,
@@ -25,7 +23,6 @@ export class RegisterRequest {
            this._email = _email;
            this._firstName = _firstName;
            this._lastName = _lastName;
-           this._avatar_url = _avatar_url;
            this._password = _password;
            this._permissions = _permissions;
            this._lastLogin = _lastLogin;
@@ -58,15 +55,6 @@ export class RegisterRequest {
 
          set last_name(value: string) {
            this._lastName = value;
-         }
-
-         @ApiProperty()
-         get avatar_url(): string {
-           return this._avatar_url;
-         }
-
-         set avatar_url(value: string) {
-           this._avatar_url = value;
          }
 
          @ApiProperty()

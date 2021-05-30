@@ -22,13 +22,13 @@ export class RoleEntity extends BaseEntity {
   description: string;
 
   @ManyToMany(
-    () => UserEntity,
+    type => UserEntity,
     user => user.roles,
   )
   users: UserEntity[];
 
   @ManyToMany(
-    () => PermissionEntity,
+    type => PermissionEntity,
     permission => permission.roles,
   )
   permission: PermissionEntity[];

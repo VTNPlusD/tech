@@ -12,7 +12,6 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 import { JoinColumn, ManyToMany } from 'typeorm/index';
-import { PostEntity } from './post.entity';
 
 @Entity({ name: 'categories' })
 @Tree('materialized-path')
@@ -64,17 +63,11 @@ export class CategoryEntity extends BaseEntity {
   })
   updated_at: Date;
 
-  @ManyToMany(() => CategoryEntity, { cascade: true })
+  @ManyToMany(type => CategoryEntity, { cascade: true })
   @JoinColumn({
     name: 'id',
   })
-  categories: CategoryEntity[];
-
-  @ManyToMany(
-    () => PostEntity,
-    posts => posts.categories,
-  )
-  posts: PostEntity[];
+  category: CategoryEntity[];
 
   constructor(partial: Partial<CategoryEntity>) {
     super();
